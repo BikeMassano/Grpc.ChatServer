@@ -4,7 +4,7 @@ namespace Grpc.ChatServer.Services
 {
     public class MessageStreamingService
     {
-        private readonly List<IServerStreamWriter<ChatMessage>> _streams;
+        private readonly ICollection<IServerStreamWriter<ChatMessage>> _streams;
 
         public MessageStreamingService()
         {
