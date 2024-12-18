@@ -5,7 +5,8 @@ namespace Grpc.ChatServer.Services
 {
     public class MessageStreamingService
     {
-        // Коллекция потоков для подключения клиентов
+        // Потокобезопасная коллекция для подключения клиентов
+        // Их работа не требует доп. синхронизации в коде.
         private readonly ConcurrentBag<IServerStreamWriter<ChatMessage>> _streams;
 
         // Конструктор класса по умолчанию
